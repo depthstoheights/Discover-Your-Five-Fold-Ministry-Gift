@@ -1,0 +1,2683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Five-Fold Ministry Gifts Assessment - By Cleon Alleyne</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #4a5568;
+            --secondary: #718096;
+            --accent: #805ad5;
+            --success: #48bb78;
+            --info: #4299e1;
+            --warning: #ed8936;
+            --apostle: #e53e3e;
+            --prophet: #805ad5;
+            --evangelist: #48bb78;
+            --pastor: #4299e1;
+            --teacher: #ed8936;
+            --background: #f7fafc;
+            --card-bg: #ffffff;
+            --text: #2d3748;
+            --text-light: #718096;
+            --border: #e2e8f0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            text-align: center;
+        }
+
+        h2 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        h3 {
+            color: var(--secondary);
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .language-selector {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .language-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .language-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(128,90,213,0.3);
+        }
+
+        .language-btn.active {
+            background: var(--primary);
+        }
+
+        .nav-menu {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .nav-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            background: var(--primary);
+        }
+
+        .nav-btn.active {
+            background: var(--primary);
+        }
+
+        .progress-container {
+            background: var(--border);
+            border-radius: 10px;
+            height: 30px;
+            margin-bottom: 30px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, var(--accent), var(--info));
+            height: 100%;
+            border-radius: 10px;
+            transition: width 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .question-container {
+            margin-bottom: 30px;
+        }
+
+        .question {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .answer-options {
+            display: grid;
+            gap: 15px;
+        }
+
+        .answer-option {
+            background: var(--background);
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .answer-option:hover {
+            background: white;
+            border-color: var(--accent);
+            transform: translateX(5px);
+        }
+
+        .answer-option.selected {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s;
+            margin: 10px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(128,90,213,0.3);
+        }
+
+        .btn:disabled {
+            background: var(--text-light);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+        }
+
+        .btn-success {
+            background: var(--success);
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .results-container {
+            display: none;
+        }
+
+        .gift-score {
+            margin-bottom: 20px;
+        }
+
+        .gift-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .gift-bar-container {
+            background: var(--border);
+            border-radius: 10px;
+            height: 30px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .gift-bar {
+            height: 100%;
+            border-radius: 10px;
+            transition: width 1s ease;
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .gift-apostle { background: var(--apostle); }
+        .gift-prophet { background: var(--prophet); }
+        .gift-evangelist { background: var(--evangelist); }
+        .gift-pastor { background: var(--pastor); }
+        .gift-teacher { background: var(--teacher); }
+
+        .gift-description {
+            background: var(--background);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .scripture-reference {
+            background: #f8f4ff;
+            padding: 15px;
+            border-left: 4px solid var(--accent);
+            margin: 15px 0;
+            font-style: italic;
+        }
+
+        .team-comparison {
+            margin-top: 30px;
+            padding: 20px;
+            background: var(--background);
+            border-radius: 8px;
+        }
+
+        .team-member-input {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .team-member-input input {
+            padding: 10px;
+            border: 1px solid var(--border);
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .prayer-box {
+            background: linear-gradient(135deg, #f5f5ff, #e8e8ff);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid var(--accent);
+        }
+
+        .prayer-text {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: var(--primary);
+            font-style: italic;
+        }
+
+        .journal-section {
+            background: var(--background);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .journal-entry {
+            width: 100%;
+            min-height: 150px;
+            padding: 15px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: inherit;
+            resize: vertical;
+        }
+
+        .commitment-box {
+            background: #f0fdf4;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 2px solid var(--success);
+        }
+
+        .teaching-content {
+            background: var(--background);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .teaching-content p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .teaching-content ul {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        .teaching-content li {
+            margin-bottom: 10px;
+        }
+
+        .help-resource {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid var(--info);
+        }
+
+        .attribution {
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+            color: var(--text-light);
+            font-size: 14px;
+            border-top: 1px solid var(--border);
+        }
+
+        .attribution strong {
+            color: var(--accent);
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .navigation, .export-options, .language-selector, .nav-menu {
+                display: none !important;
+            }
+            .card {
+                box-shadow: none;
+                page-break-inside: avoid;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            .card {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+            .navigation {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .btn {
+                width: 100%;
+            }
+            .nav-menu {
+                flex-direction: column;
+            }
+            .nav-btn {
+                width: 100%;
+            }
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .ministry-recommendations {
+            background: #f0f9ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .recommendation-item {
+            padding: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .recommendation-item:last-child {
+            border-bottom: none;
+        }
+
+        .team-results {
+            display: grid;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .team-member-result {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .intro-content {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .intro-content p {
+            font-size: 1.1em;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .spinner {
+            border: 4px solid var(--border);
+            border-top: 4px solid var(--accent);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .checkbox-container input {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+
+        .info-section {
+            background: #f8f9ff;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .info-section h3 {
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+
+        .export-options {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation Menu -->
+        <div class="nav-menu" id="navMenu">
+            <button class="nav-btn active" onclick="showSection('home', this)" data-en="Home" data-fi="Koti">Home</button>
+            <button class="nav-btn" onclick="showSection('teaching', this)" data-en="Teaching" data-fi="Opetus">Teaching</button>
+            <button class="nav-btn" onclick="showSection('assessment', this)" data-en="Assessment" data-fi="Arviointi">Assessment</button>
+            <button class="nav-btn" onclick="showSection('prayer', this)" data-en="Prayer" data-fi="Rukous">Prayer</button>
+            <button class="nav-btn" onclick="showSection('journal', this)" data-en="Journal" data-fi="Päiväkirja">Journal</button>
+            <button class="nav-btn" onclick="showSection('help', this)" data-en="Help" data-fi="Apu">Help</button>
+            <button class="nav-btn" onclick="showSection('about', this)" data-en="About" data-fi="Tietoja">About</button>
+        </div>
+
+        <!-- Welcome/Home Screen -->
+        <div id="homeSection" class="card section">
+            <h1 data-en="Discover Your Five-Fold Ministry Gift" data-fi="Löydä Viisinkertainen Palvelulahjasi">Discover Your Five-Fold Ministry Gift</h1>
+            
+            <div class="language-selector">
+                <button class="language-btn active" onclick="setLanguage('en')">English</button>
+                <button class="language-btn" onclick="setLanguage('fi')">Suomi</button>
+            </div>
+
+            <div class="intro-content">
+                <p data-en="Based on Ephesians 4:11-13, God has given five distinct ministry gifts to build up His church." 
+                   data-fi="Efesolaiskirjeen 4:11-13 mukaan Jumala on antanut viisi erilaista palvelulahjaa rakentaakseen seurakuntaansa.">
+                   Based on Ephesians 4:11-13, God has given five distinct ministry gifts to build up His church.
+                </p>
+                <p data-en="This assessment will help you discover your primary ministry gifting through 30 scenario-based questions."
+                   data-fi="Tämä arviointi auttaa sinua löytämään ensisijaisen palvelulahjasi 30 skenaariokysymyksen avulla.">
+                   This assessment will help you discover your primary ministry gifting through 30 scenario-based questions.
+                </p>
+                <p data-en="Answer honestly based on your natural inclinations, not what you think is the 'right' answer."
+                   data-fi="Vastaa rehellisesti luonnollisten taipumustesi mukaan, ei sen mukaan mikä mielestäsi on 'oikea' vastaus.">
+                   Answer honestly based on your natural inclinations, not what you think is the 'right' answer.
+                </p>
+            </div>
+
+            <div style="text-align: center;">
+                <button class="btn btn-success" onclick="showSection('assessment'); startAssessment();" data-en="Begin Assessment" data-fi="Aloita Arviointi">Begin Assessment</button>
+                <button class="btn" onclick="showSection('teaching')" data-en="Learn About Five-Fold Ministry" data-fi="Opi Viisinkertaisesta Palvelusta">Learn About Five-Fold Ministry</button>
+            </div>
+
+            <div class="attribution">
+                Created by <strong>Cleon Alleyne</strong> for Ministry Purposes<br>
+                Empowering Leaders to Discover Their God-Given Gifts
+            </div>
+        </div>
+
+        <!-- Teaching Section -->
+        <div id="teachingSection" class="card section hidden">
+            <h1 data-en="Understanding the Five-Fold Ministry" data-fi="Viisinkertaisen Palvelun Ymmärtäminen">Understanding the Five-Fold Ministry</h1>
+            
+            <div class="teaching-content">
+                <h2>Biblical Foundation</h2>
+                <div class="scripture-reference">
+                    "And he gave the apostles, the prophets, the evangelists, the shepherds and teachers, to equip the saints for the work of ministry, for building up the body of Christ" - Ephesians 4:11-12 (ESV)
+                </div>
+
+                <p>The Five-Fold Ministry represents God's leadership structure for His church. These are not just titles or positions, but functional gifts given by Christ to build, mature, and mobilize His body.</p>
+
+                <h3>The Five Ministry Gifts:</h3>
+
+                <h4>1. Apostles - The Sent Ones</h4>
+                <ul>
+                    <li>Pioneer new works and plant churches</li>
+                    <li>Lay doctrinal foundations</li>
+                    <li>Provide governmental oversight</li>
+                    <li>Operate in signs, wonders, and miracles</li>
+                    <li>Build networks and kingdom connections</li>
+                </ul>
+
+                <h4>2. Prophets - The Seers</h4>
+                <ul>
+                    <li>Hear and communicate God's voice</li>
+                    <li>Provide direction through revelation</li>
+                    <li>Call for alignment with God's purposes</li>
+                    <li>Operate in spiritual discernment</li>
+                    <li>Bring correction and encouragement</li>
+                </ul>
+
+                <h4>3. Evangelists - The Harvesters</h4>
+                <ul>
+                    <li>Passionate about soul-winning</li>
+                    <li>Effectively communicate the gospel</li>
+                    <li>Lead people to salvation</li>
+                    <li>Equip believers for personal evangelism</li>
+                    <li>Bridge-builders to the unchurched</li>
+                </ul>
+
+                <h4>4. Pastors - The Shepherds</h4>
+                <ul>
+                    <li>Care for and nurture God's people</li>
+                    <li>Provide spiritual covering and protection</li>
+                    <li>Build community and relationships</li>
+                    <li>Offer counsel and guidance</li>
+                    <li>Focus on spiritual and emotional health</li>
+                </ul>
+
+                <h4>5. Teachers - The Instructors</h4>
+                <ul>
+                    <li>Explain and apply God's word accurately</li>
+                    <li>Ground believers in sound doctrine</li>
+                    <li>Develop curriculum and training</li>
+                    <li>Bring clarity and understanding</li>
+                    <li>Equip saints through systematic instruction</li>
+                </ul>
+
+                <h3>Working Together</h3>
+                <p>These gifts are designed to work in harmony. No single gift is complete without the others. A healthy church needs all five functioning together:</p>
+                <ul>
+                    <li><strong>Apostles</strong> provide vision and direction</li>
+                    <li><strong>Prophets</strong> ensure alignment with God's voice</li>
+                    <li><strong>Evangelists</strong> bring in the harvest</li>
+                    <li><strong>Pastors</strong> care for and mature the flock</li>
+                    <li><strong>Teachers</strong> ground everyone in truth</li>
+                </ul>
+
+                <h3>Discovering Your Gift</h3>
+                <p>Every believer has a ministry calling, though not all are called to the five-fold offices. However, understanding these gifts helps you:</p>
+                <ul>
+                    <li>Identify your primary motivations in ministry</li>
+                    <li>Understand how you best serve the body</li>
+                    <li>Appreciate others' different giftings</li>
+                    <li>Build balanced ministry teams</li>
+                    <li>Pursue appropriate training and development</li>
+                </ul>
+            </div>
+
+            <div style="text-align: center;">
+                <button class="btn btn-success" onclick="showSection('assessment'); startAssessment();" data-en="Take Assessment" data-fi="Ota Arviointi">Take Assessment</button>
+            </div>
+        </div>
+
+        <!-- Assessment Screen -->
+        <div id="assessmentSection" class="card section hidden">
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar">0%</div>
+            </div>
+
+            <div id="questionContainer" class="question-container">
+                <!-- Questions will be dynamically inserted here -->
+            </div>
+
+            <div class="navigation">
+                <button class="btn btn-secondary" onclick="previousQuestion()" id="prevBtn" data-en="Previous" data-fi="Edellinen">Previous</button>
+                <button class="btn" onclick="nextQuestion()" id="nextBtn" disabled data-en="Next" data-fi="Seuraava">Next</button>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="resultsSection" class="card section hidden">
+            <h1 data-en="Your Five-Fold Ministry Results" data-fi="Viisinkertaisen Palvelun Tuloksesi">Your Five-Fold Ministry Results</h1>
+            
+            <div id="resultsContent">
+                <!-- Results will be dynamically inserted here -->
+            </div>
+
+            <div class="export-options">
+                <button class="btn" onclick="printResults()" data-en="Print Results" data-fi="Tulosta Tulokset">Print Results</button>
+                <button class="btn btn-secondary" onclick="saveResults()" data-en="Save Results" data-fi="Tallenna Tulokset">Save Results</button>
+                <button class="btn btn-success" onclick="retakeAssessment()" data-en="Retake Assessment" data-fi="Tee Arviointi Uudelleen">Retake Assessment</button>
+                <button class="btn" onclick="showSection('prayer')" data-en="Go to Prayer" data-fi="Mene Rukoukseen">Go to Prayer</button>
+            </div>
+        </div>
+
+        <!-- Prayer Section -->
+        <div id="prayerSection" class="card section hidden">
+            <h1 data-en="Prayer & Commitment" data-fi="Rukous & Sitoutuminen">Prayer & Commitment</h1>
+            
+            <div class="prayer-box">
+                <h3>A Prayer for Your Ministry</h3>
+                <p class="prayer-text">
+                    Heavenly Father,<br><br>
+                    Thank You for the unique gifts You have placed within me. I acknowledge that every good and perfect gift comes from You. Help me to steward the ministry gift You've entrusted to me with wisdom, humility, and love.<br><br>
+                    Lord, I pray for clarity in understanding my calling and courage to walk in it. Equip me to serve Your body effectively, whether as an apostle pioneering new works, a prophet declaring Your word, an evangelist harvesting souls, a pastor shepherding Your flock, or a teacher grounding others in truth.<br><br>
+                    Give me a heart that seeks to build up others, not myself. Help me to work in unity with other ministry gifts, recognizing that we are all part of one body with Christ as our head.<br><br>
+                    I commit to developing this gift through study, prayer, and practice. Use me, Lord, for Your glory and the advancement of Your kingdom.<br><br>
+                    In Jesus' mighty name,<br>
+                    Amen.
+                </p>
+            </div>
+
+            <div class="commitment-box">
+                <h3>Leadership Commitment</h3>
+                <p>As a leader in God's kingdom, I commit to:</p>
+                
+                <div class="checkbox-container">
+                    <input type="checkbox" id="commit1">
+                    <label for="commit1">Pray daily for wisdom and guidance in my ministry</label>
+                </div>
+                
+                <div class="checkbox-container">
+                    <input type="checkbox" id="commit2">
+                    <label for="commit2">Develop my gift through continuous learning and practice</label>
+                </div>
+                
+                <div class="checkbox-container">
+                    <input type="checkbox" id="commit3">
+                    <label for="commit3">Serve with humility, recognizing my need for other gifts</label>
+                </div>
+                
+                <div class="checkbox-container">
+                    <input type="checkbox" id="commit4">
+                    <label for="commit4">Mentor and raise up others in their ministry gifts</label>
+                </div>
+                
+                <div class="checkbox-container">
+                    <input type="checkbox" id="commit5">
+                    <label for="commit5">Pursue unity and collaboration with other leaders</label>
+                </div>
+                
+                <div class="checkbox-container">
+                    <input type="checkbox" id="commit6">
+                    <label for="commit6">Stay accountable to spiritual authority and covering</label>
+                </div>
+                
+                <div class="checkbox-container">
+                    <input type="checkbox" id="commit7">
+                    <label for="commit7">Prioritize character development alongside gift development</label>
+                </div>
+
+                <div style="margin-top: 20px;">
+                    <strong>Date of Commitment:</strong> <input type="date" id="commitmentDate" style="margin-left: 10px; padding: 5px; border-radius: 5px; border: 1px solid var(--border);">
+                </div>
+            </div>
+
+            <div class="prayer-box" style="background: linear-gradient(135deg, #fff5f5, #ffe8e8);">
+                <h3>Prayer Partners</h3>
+                <p>Leadership is not meant to be done alone. List three people who will pray for you regularly:</p>
+                <ol style="margin: 20px 0;">
+                    <li><input type="text" placeholder="Prayer Partner 1" style="width: 80%; padding: 8px; margin: 5px 0; border-radius: 5px; border: 1px solid var(--border);"></li>
+                    <li><input type="text" placeholder="Prayer Partner 2" style="width: 80%; padding: 8px; margin: 5px 0; border-radius: 5px; border: 1px solid var(--border);"></li>
+                    <li><input type="text" placeholder="Prayer Partner 3" style="width: 80%; padding: 8px; margin: 5px 0; border-radius: 5px; border: 1px solid var(--border);"></li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Journal Section -->
+        <div id="journalSection" class="card section hidden">
+            <h1 data-en="Leadership Journal" data-fi="Johtajuuden Päiväkirja">Leadership Journal</h1>
+            
+            <div class="journal-section">
+                <h3>Reflect on Your Ministry Journey</h3>
+                <p>Use this space to journal your thoughts, revelations, and growth in your ministry gift:</p>
+                
+                <div style="margin: 20px 0;">
+                    <label><strong>Date:</strong></label>
+                    <input type="date" id="journalDate" style="margin-left: 10px; padding: 5px; border-radius: 5px; border: 1px solid var(--border);">
+                </div>
+                
+                <textarea class="journal-entry" id="journalEntry1" placeholder="What has God been showing you about your ministry gift?"></textarea>
+                
+                <h4 style="margin-top: 30px;">Key Questions for Reflection:</h4>
+                
+                <div style="margin: 20px 0;">
+                    <p><strong>1. How have I seen my gift operating recently?</strong></p>
+                    <textarea class="journal-entry" style="min-height: 100px;" placeholder="Describe specific instances..."></textarea>
+                </div>
+                
+                <div style="margin: 20px 0;">
+                    <p><strong>2. What challenges am I facing in my ministry?</strong></p>
+                    <textarea class="journal-entry" style="min-height: 100px;" placeholder="What obstacles need prayer..."></textarea>
+                </div>
+                
+                <div style="margin: 20px 0;">
+                    <p><strong>3. How can I grow and develop my gift further?</strong></p>
+                    <textarea class="journal-entry" style="min-height: 100px;" placeholder="Practical steps I will take..."></textarea>
+                </div>
+                
+                <div style="margin: 20px 0;">
+                    <p><strong>4. Who am I mentoring and how am I raising up others?</strong></p>
+                    <textarea class="journal-entry" style="min-height: 100px;" placeholder="Names and development plans..."></textarea>
+                </div>
+                
+                <div style="margin: 20px 0;">
+                    <p><strong>5. What is God calling me to do next in ministry?</strong></p>
+                    <textarea class="journal-entry" style="min-height: 100px;" placeholder="Vision and next steps..."></textarea>
+                </div>
+
+                <div style="text-align: center; margin-top: 30px;">
+                    <button class="btn" onclick="saveJournal()">Save Journal Entry</button>
+                    <button class="btn btn-secondary" onclick="printJournal()">Print Journal</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Help Section -->
+        <div id="helpSection" class="card section hidden">
+            <h1 data-en="Finding Help & Resources" data-fi="Avun & Resurssien Löytäminen">Finding Help & Resources</h1>
+            
+            <div class="help-resource">
+                <h3>Spiritual Covering & Mentorship</h3>
+                <p>Every leader needs spiritual covering and mentorship. Consider:</p>
+                <ul>
+                    <li>Connecting with seasoned leaders who operate in your gift</li>
+                    <li>Joining apostolic networks or ministry associations</li>
+                    <li>Finding a local church with strong five-fold ministry</li>
+                    <li>Attending conferences focused on your ministry gift</li>
+                </ul>
+            </div>
+            
+            <div class="help-resource">
+                <h3>Training & Development</h3>
+                <p>Continuous learning is essential for ministry growth:</p>
+                <ul>
+                    <li><strong>For Apostles:</strong> Church planting networks, leadership institutes</li>
+                    <li><strong>For Prophets:</strong> Prophetic schools, intercessory prayer networks</li>
+                    <li><strong>For Evangelists:</strong> Evangelism training programs, mission organizations</li>
+                    <li><strong>For Pastors:</strong> Pastoral care courses, counseling certification</li>
+                    <li><strong>For Teachers:</strong> Bible colleges, theological seminaries</li>
+                </ul>
+            </div>
+            
+            <div class="help-resource">
+                <h3>Recommended Resources</h3>
+                <ul>
+                    <li>Books on Five-Fold Ministry by Dr. Bill Hamon</li>
+                    <li>Apostolic and prophetic networks in your region</li>
+                    <li>Online courses and webinars on ministry development</li>
+                    <li>Local ministry fellowships and leaders' gatherings</li>
+                    <li>Accountability groups with other ministry leaders</li>
+                </ul>
+            </div>
+            
+            <div class="help-resource">
+                <h3>Warning Signs - When to Seek Help</h3>
+                <p>Seek immediate counsel if you experience:</p>
+                <ul>
+                    <li>Burnout or ministry fatigue</li>
+                    <li>Isolation from other leaders</li>
+                    <li>Moral or ethical struggles</li>
+                    <li>Family or marriage strain due to ministry</li>
+                    <li>Loss of passion or calling</li>
+                    <li>Unresolved conflict with other leaders</li>
+                </ul>
+            </div>
+
+            <div class="prayer-box">
+                <p><strong>Remember:</strong> You are not alone in ministry. God has placed you in a body of believers. Reach out, connect, and build relationships with other leaders. Iron sharpens iron!</p>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <div id="aboutSection" class="card section hidden">
+            <h1>About This Assessment Tool</h1>
+            
+            <div class="info-section">
+                <h3>Created by Cleon Alleyne</h3>
+                <p>This Five-Fold Ministry Assessment Tool was developed by <strong>Cleon Alleyne</strong>, a missionary pastor, adventurer, traveler, and content creator dedicated to equipping leaders for kingdom advancement.</p>
+                <p>The tool is designed for ministry purposes to help believers discover their God-given gifts and understand their role in building the body of Christ.</p>
+            </div>
+            
+            <div class="info-section">
+                <h3>How This Tool Works</h3>
+                <ol>
+                    <li><strong>Assessment:</strong> 30 carefully crafted scenario-based questions reveal your natural ministry inclinations</li>
+                    <li><strong>Scoring Algorithm:</strong> Each answer is weighted across all five gifts to determine your primary and secondary giftings</li>
+                    <li><strong>Comprehensive Results:</strong> Detailed analysis of your gifts with biblical foundations and practical applications</li>
+                    <li><strong>Team Analysis:</strong> Compare results with team members to build balanced ministry teams</li>
+                    <li><strong>Spiritual Development:</strong> Prayer guides, journaling, and commitment tools for ongoing growth</li>
+                </ol>
+            </div>
+            
+            <div class="info-section">
+                <h3>Features</h3>
+                <ul>
+                    <li>✓ Bilingual support (English/Finnish)</li>
+                    <li>✓ Mobile-responsive design</li>
+                    <li>✓ Offline functionality - no internet required</li>
+                    <li>✓ Print and save capabilities</li>
+                    <li>✓ Team comparison tools</li>
+                    <li>✓ Comprehensive teaching materials</li>
+                    <li>✓ Prayer and journaling sections</li>
+                    <li>✓ Leadership development resources</li>
+                </ul>
+            </div>
+            
+            <div class="info-section">
+                <h3>Purpose & Vision</h3>
+                <p>This tool exists to:</p>
+                <ul>
+                    <li>Help believers discover their ministry calling</li>
+                    <li>Equip churches to build balanced leadership teams</li>
+                    <li>Provide practical resources for ministry development</li>
+                    <li>Foster unity through understanding different gifts</li>
+                    <li>Advance God's kingdom through equipped leaders</li>
+                </ul>
+            </div>
+            
+            <div class="info-section">
+                <h3>Contact & Support</h3>
+                <p>For questions, testimonies, or ministry partnership opportunities, this tool was created by Cleon Alleyne for the glory of God and the edification of His church.</p>
+                <p><em>"And he gave the apostles, the prophets, the evangelists, the shepherds and teachers, to equip the saints for the work of ministry, for building up the body of Christ" - Ephesians 4:11-12</em></p>
+            </div>
+
+            <div class="attribution">
+                <strong>© 2024 Cleon Alleyne - Five-Fold Ministry Assessment Tool</strong><br>
+                Created for Ministry Purposes - Free to Use for Kingdom Advancement
+            </div>
+        </div>
+
+        <!-- Team Comparison Screen -->
+        <div id="teamSection" class="card section hidden">
+            <h2 data-en="Team Ministry Analysis" data-fi="Tiimin Palveluanalyysi">Team Ministry Analysis</h2>
+            
+            <div id="teamInputArea">
+                <p data-en="Add team members and their scores to see your ministry team dynamics:" 
+                   data-fi="Lisää tiimin jäsenet ja heidän pisteensä nähdäksesi palvelutiimisi dynamiikan:">
+                   Add team members and their scores to see your ministry team dynamics:
+                </p>
+                <div id="teamMembersList"></div>
+                <button class="btn" onclick="addTeamMember()" data-en="Add Team Member" data-fi="Lisää Tiimin Jäsen">Add Team Member</button>
+            </div>
+
+            <div id="teamResultsArea" class="team-results hidden">
+                <!-- Team analysis will appear here -->
+            </div>
+
+            <div style="text-align: center; margin-top: 20px;">
+                <button class="btn btn-secondary" onclick="analyzeTeam()" data-en="Analyze Team" data-fi="Analysoi Tiimi">Analyze Team</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Application State
+        let currentLanguage = 'en';
+        let currentQuestion = 0;
+        let answers = [];
+        let scores = {
+            apostle: 0,
+            prophet: 0,
+            evangelist: 0,
+            pastor: 0,
+            teacher: 0
+        };
+        let currentSection = 'home';
+
+        // Translations
+        const translations = {
+            en: {
+                apostle: "Apostle",
+                prophet: "Prophet",
+                evangelist: "Evangelist",
+                pastor: "Pastor",
+                teacher: "Teacher",
+                primaryGift: "Primary Gift",
+                secondaryGift: "Secondary Gift",
+                giftAnalysis: "Gift Analysis",
+                biblicalFoundation: "Biblical Foundation",
+                practicalApplication: "Practical Applications",
+                ministryRecommendations: "Ministry Recommendations",
+                growthAreas: "Areas for Growth",
+                teamDynamics: "Team Dynamics",
+                submitAssessment: "Submit Assessment"
+            },
+            fi: {
+                apostle: "Apostoli",
+                prophet: "Profeetta",
+                evangelist: "Evankelista",
+                pastor: "Paimen",
+                teacher: "Opettaja",
+                primaryGift: "Ensisijainen Lahja",
+                secondaryGift: "Toissijainen Lahja",
+                giftAnalysis: "Lahjan Analyysi",
+                biblicalFoundation: "Raamatullinen Perusta",
+                practicalApplication: "Käytännön Sovellukset",
+                ministryRecommendations: "Palvelusuositukset",
+                growthAreas: "Kasvualueet",
+                teamDynamics: "Tiimidynamiikka",
+                submitAssessment: "Lähetä Arviointi"
+            }
+        };
+
+        // Questions Database (same as before)
+        const questions = [
+            {
+                en: "A new believer comes to you confused about conflicting teachings they've heard. How do you help them?",
+                fi: "Uusi uskova tulee luoksesi hämmentyneenä ristiriitaisista opetuksista. Miten autat heitä?",
+                answers: [
+                    {
+                        en: "I establish them in foundational truths and help them see the bigger picture of God's kingdom",
+                        fi: "Vahvistan heitä perustotuuksissa ja autan näkemään Jumalan valtakunnan suuremman kuvan",
+                        weights: { apostle: 3, prophet: 1, evangelist: 0, pastor: 1, teacher: 2 }
+                    },
+                    {
+                        en: "I discern the spiritual roots of their confusion and speak truth to bring clarity",
+                        fi: "Erottelen heidän hämmennyksensä hengelliset juuret ja puhun totuutta tuodakseni selkeyttä",
+                        weights: { apostle: 1, prophet: 3, evangelist: 0, pastor: 1, teacher: 1 }
+                    },
+                    {
+                        en: "I focus on the simple gospel message and their personal relationship with Jesus",
+                        fi: "Keskityn yksinkertaiseen evankeliumin sanomaan ja heidän henkilökohtaiseen suhteeseensa Jeesukseen",
+                        weights: { apostle: 0, prophet: 0, evangelist: 3, pastor: 2, teacher: 0 }
+                    },
+                    {
+                        en: "I spend time listening to their concerns and gently guide them through their doubts",
+                        fi: "Vietän aikaa kuunnellen heidän huoliaan ja ohjaan heitä hellästi epäilysten läpi",
+                        weights: { apostle: 0, prophet: 1, evangelist: 1, pastor: 3, teacher: 1 }
+                    },
+                    {
+                        en: "I systematically explain the doctrines and help them understand scripture correctly",
+                        fi: "Selitän systemaattisesti oppeja ja autan heitä ymmärtämään raamattua oikein",
+                        weights: { apostle: 1, prophet: 1, evangelist: 0, pastor: 0, teacher: 3 }
+                    }
+                ]
+            },
+            {
+                en: "Your church needs to expand its ministry. What's your first instinct?",
+                fi: "Seurakuntasi tarvitsee laajentaa palvelutyötään. Mikä on ensimmäinen vaistosi?",
+                answers: [
+                    {
+                        en: "Plant a new church or establish a ministry network in unreached areas",
+                        fi: "Istuttaa uusi seurakunta tai perustaa palveluverkosto saavuttamattomille alueille",
+                        weights: { apostle: 3, prophet: 0, evangelist: 1, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "Seek God's specific vision and timing through prayer and fasting",
+                        fi: "Etsiä Jumalan erityistä näkyä ja ajoitusta rukouksen ja paaston kautta",
+                        weights: { apostle: 1, prophet: 3, evangelist: 0, pastor: 1, teacher: 0 }
+                    },
+                    {
+                        en: "Organize outreach events to bring more people to Christ",
+                        fi: "Järjestää tavoittavia tapahtumia tuodakseen lisää ihmisiä Kristuksen luo",
+                        weights: { apostle: 0, prophet: 0, evangelist: 3, pastor: 1, teacher: 0 }
+                    },
+                    {
+                        en: "Strengthen existing members first so they're ready for growth",
+                        fi: "Vahvistaa ensin nykyisiä jäseniä, jotta he ovat valmiita kasvuun",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 3, teacher: 1 }
+                    },
+                    {
+                        en: "Develop training programs to equip members for various ministries",
+                        fi: "Kehittää koulutusohjelmia varustaakseen jäseniä erilaisiin palvelutehtäviin",
+                        weights: { apostle: 1, prophet: 0, evangelist: 0, pastor: 1, teacher: 3 }
+                    }
+                ]
+            },
+            {
+                en: "During a church service, you sense something significant happening. What do you do?",
+                fi: "Jumalanpalveluksen aikana tunnet jotain merkittävää tapahtuvan. Mitä teet?",
+                answers: [
+                    {
+                        en: "I recognize a strategic kingdom moment and mobilize people for action",
+                        fi: "Tunnistan strategisen valtakunnan hetken ja mobilisoin ihmiset toimintaan",
+                        weights: { apostle: 3, prophet: 1, evangelist: 0, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "I wait for God's word and deliver what He reveals to the congregation",
+                        fi: "Odotan Jumalan sanaa ja toimitan sen, mitä Hän paljastaa seurakunnalle",
+                        weights: { apostle: 0, prophet: 3, evangelist: 0, pastor: 1, teacher: 0 }
+                    },
+                    {
+                        en: "I give an altar call for salvation and commitment to Christ",
+                        fi: "Annan alttarikutsun pelastukseen ja sitoutumiseen Kristukseen",
+                        weights: { apostle: 0, prophet: 0, evangelist: 3, pastor: 1, teacher: 0 }
+                    },
+                    {
+                        en: "I look for individuals who need personal ministry and comfort",
+                        fi: "Etsin yksilöitä, jotka tarvitsevat henkilökohtaista palvelua ja lohdutusta",
+                        weights: { apostle: 0, prophet: 1, evangelist: 0, pastor: 3, teacher: 0 }
+                    },
+                    {
+                        en: "I prepare to explain what God is doing so people understand and grow",
+                        fi: "Valmistaudun selittämään, mitä Jumala tekee, jotta ihmiset ymmärtävät ja kasvavat",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 1, teacher: 3 }
+                    }
+                ]
+            },
+            {
+                en: "A church member shares they're struggling with a habitual sin. Your response?",
+                fi: "Seurakunnan jäsen kertoo kamppailevansa toistuvan synnin kanssa. Vastauksesi?",
+                answers: [
+                    {
+                        en: "I help them understand their identity in Christ and establish new patterns",
+                        fi: "Autan heitä ymmärtämään identiteettinsä Kristuksessa ja luomaan uusia malleja",
+                        weights: { apostle: 3, prophet: 0, evangelist: 0, pastor: 1, teacher: 1 }
+                    },
+                    {
+                        en: "I address the spiritual stronghold and declare freedom over their life",
+                        fi: "Käsittelen hengellistä linnaketta ja julistan vapautta heidän elämäänsä",
+                        weights: { apostle: 0, prophet: 3, evangelist: 0, pastor: 1, teacher: 0 }
+                    },
+                    {
+                        en: "I share testimonies of transformation and lead them to recommit to Jesus",
+                        fi: "Jaan todistuksia muutoksesta ja johdan heidät sitoutumaan uudelleen Jeesukseen",
+                        weights: { apostle: 0, prophet: 0, evangelist: 3, pastor: 1, teacher: 0 }
+                    },
+                    {
+                        en: "I walk alongside them with patience, providing accountability and support",
+                        fi: "Kuljen heidän rinnallaan kärsivällisesti, tarjoten vastuullisuutta ja tukea",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 3, teacher: 0 }
+                    },
+                    {
+                        en: "I teach them biblical principles about sanctification and spiritual disciplines",
+                        fi: "Opetan heille raamatullisia periaatteita pyhityksestä ja hengellisistä harjoituksista",
+                        weights: { apostle: 0, prophet: 1, evangelist: 0, pastor: 1, teacher: 3 }
+                    }
+                ]
+            },
+            {
+                en: "Your community faces a crisis. How do you lead the church's response?",
+                fi: "Yhteisösi kohtaa kriisin. Miten johdat seurakunnan vastetta?",
+                answers: [
+                    {
+                        en: "I mobilize the church as a strategic force for kingdom impact in the crisis",
+                        fi: "Mobilisoin seurakunnan strategiseksi voimaksi valtakunnan vaikutukseen kriisissä",
+                        weights: { apostle: 3, prophet: 0, evangelist: 1, pastor: 1, teacher: 0 }
+                    },
+                    {
+                        en: "I seek God's perspective on the crisis and call the church to prayer and repentance",
+                        fi: "Etsin Jumalan näkökulmaa kriisiin ja kutsun seurakunnan rukoukseen ja parannukseen",
+                        weights: { apostle: 0, prophet: 3, evangelist: 0, pastor: 1, teacher: 0 }
+                    },
+                    {
+                        en: "I see it as an opportunity to share hope and bring people to salvation",
+                        fi: "Näen sen tilaisuutena jakaa toivoa ja tuoda ihmisiä pelastukseen",
+                        weights: { apostle: 0, prophet: 0, evangelist: 3, pastor: 1, teacher: 0 }
+                    },
+                    {
+                        en: "I focus on caring for those hurting and organizing practical support",
+                        fi: "Keskityn huolehtimaan kärsivistä ja järjestämään käytännön tukea",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 3, teacher: 0 }
+                    },
+                    {
+                        en: "I help people understand the crisis biblically and grow in faith through it",
+                        fi: "Autan ihmisiä ymmärtämään kriisin raamatullisesti ja kasvamaan uskossa sen läpi",
+                        weights: { apostle: 0, prophet: 1, evangelist: 0, pastor: 1, teacher: 3 }
+                    }
+                ]
+            },
+            {
+                en: "When preparing a message for the congregation, what's your primary focus?",
+                fi: "Kun valmistelet viestiä seurakunnalle, mikä on ensisijainen painopisteesi?",
+                answers: [
+                    {
+                        en: "Casting vision and equipping believers for their kingdom purpose",
+                        fi: "Vision luominen ja uskovien varustaminen valtakunnan tarkoitukseensa",
+                        weights: { apostle: 3, prophet: 0, evangelist: 0, pastor: 0, teacher: 1 }
+                    },
+                    {
+                        en: "Delivering what God is specifically saying to this congregation now",
+                        fi: "Sen välittäminen, mitä Jumala erityisesti sanoo tälle seurakunnalle nyt",
+                        weights: { apostle: 0, prophet: 3, evangelist: 0, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "Presenting the gospel in a way that compels decision for Christ",
+                        fi: "Evankeliumin esittäminen tavalla, joka pakottaa päätökseen Kristuksen puolesta",
+                        weights: { apostle: 0, prophet: 0, evangelist: 3, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "Addressing the practical needs and struggles of the flock",
+                        fi: "Lauman käytännön tarpeiden ja kamppailujen käsitteleminen",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 3, teacher: 1 }
+                    },
+                    {
+                        en: "Systematically explaining scripture so people grow in understanding",
+                        fi: "Raamatun systemaattinen selittäminen, jotta ihmiset kasvavat ymmärryksessä",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 0, teacher: 3 }
+                    }
+                ]
+            },
+            {
+                en: "A young person expresses interest in ministry. How do you mentor them?",
+                fi: "Nuori ilmaisee kiinnostuksensa palvelutyöhön. Miten mentoroit häntä?",
+                answers: [
+                    {
+                        en: "I help them discover their calling and launch them into ministry",
+                        fi: "Autan heitä löytämään kutsumuksensa ja käynnistän heidät palvelutyöhön",
+                        weights: { apostle: 3, prophet: 0, evangelist: 0, pastor: 1, teacher: 0 }
+                    },
+                    {
+                        en: "I help them develop spiritual sensitivity and hear God's voice clearly",
+                        fi: "Autan heitä kehittämään hengellistä herkkyyttä ja kuulemaan Jumalan äänen selkeästi",
+                        weights: { apostle: 0, prophet: 3, evangelist: 0, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "I train them in sharing their faith and winning souls",
+                        fi: "Koulutan heitä jakamaan uskoaan ja voittamaan sieluja",
+                        weights: { apostle: 0, prophet: 0, evangelist: 3, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "I nurture their character and help them grow spiritually and emotionally",
+                        fi: "Hoivaan heidän luonnettaan ja autan heitä kasvamaan hengellisesti ja emotionaalisesti",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 3, teacher: 1 }
+                    },
+                    {
+                        en: "I ground them in solid doctrine and biblical knowledge",
+                        fi: "Perustan heidät vahvaan oppiin ja raamatulliseen tietoon",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 0, teacher: 3 }
+                    }
+                ]
+            },
+            {
+                en: "Your church is planning its annual strategy. What excites you most?",
+                fi: "Seurakuntasi suunnittelee vuosistrategiaansa. Mikä innostaa sinua eniten?",
+                answers: [
+                    {
+                        en: "Pioneering new initiatives and expanding the church's influence",
+                        fi: "Uusien aloitteiden pioneerointi ja seurakunnan vaikutuksen laajentaminen",
+                        weights: { apostle: 3, prophet: 0, evangelist: 1, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "Ensuring we're aligned with God's prophetic timing and purposes",
+                        fi: "Varmistaminen, että olemme linjassa Jumalan profeetallisen ajoituksen ja tarkoitusten kanssa",
+                        weights: { apostle: 0, prophet: 3, evangelist: 0, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "Planning outreach campaigns and evangelistic opportunities",
+                        fi: "Tavoittavien kampanjoiden ja evankelioimismahdollisuuksien suunnittelu",
+                        weights: { apostle: 0, prophet: 0, evangelist: 3, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "Developing care systems to better shepherd the congregation",
+                        fi: "Hoitojärjestelmien kehittäminen paimentaakseen seurakuntaa paremmin",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 3, teacher: 0 }
+                    },
+                    {
+                        en: "Creating educational programs for spiritual growth and maturity",
+                        fi: "Koulutusohjelmien luominen hengelliseen kasvuun ja kypsyyteen",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 0, teacher: 3 }
+                    }
+                ]
+            },
+            {
+                en: "How do you prefer to spend your personal devotion time?",
+                fi: "Miten haluat viettää henkilökohtaisen hartausaikasi?",
+                answers: [
+                    {
+                        en: "Seeking strategies and blueprints for kingdom advancement",
+                        fi: "Etsien strategioita ja suunnitelmia valtakunnan edistämiseen",
+                        weights: { apostle: 3, prophet: 1, evangelist: 0, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "In deep intercession and waiting on prophetic revelation",
+                        fi: "Syvässä esirukouksessa ja odottaen profeetallista ilmestystä",
+                        weights: { apostle: 0, prophet: 3, evangelist: 0, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "Praying for the lost and preparing evangelistic messages",
+                        fi: "Rukoillen kadotettujen puolesta ja valmistellen evankelioivia viestejä",
+                        weights: { apostle: 0, prophet: 0, evangelist: 3, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "Interceding for individuals and their specific needs",
+                        fi: "Rukoillen yksilöiden ja heidän erityistarpeidensa puolesta",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 3, teacher: 0 }
+                    },
+                    {
+                        en: "Studying scripture deeply to understand and teach truth accurately",
+                        fi: "Tutkien raamattua syvällisesti ymmärtääkseni ja opettaakseni totuutta tarkasti",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 0, teacher: 3 }
+                    }
+                ]
+            },
+            {
+                en: "A controversial issue divides your church. How do you respond?",
+                fi: "Kiistanalainen asia jakaa seurakuntaasi. Miten vastaat?",
+                answers: [
+                    {
+                        en: "I establish clear direction based on kingdom principles and move forward",
+                        fi: "Luon selkeän suunnan valtakunnan periaatteiden pohjalta ja etenen",
+                        weights: { apostle: 3, prophet: 0, evangelist: 0, pastor: 0, teacher: 1 }
+                    },
+                    {
+                        en: "I seek God's word on the matter and boldly declare His truth",
+                        fi: "Etsin Jumalan sanaa asiassa ja julistan rohkeasti Hänen totuuttaan",
+                        weights: { apostle: 0, prophet: 3, evangelist: 0, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "I redirect focus to the gospel and our mission to reach the lost",
+                        fi: "Suuntaan huomion uudelleen evankeliumiin ja tehtäväämme tavoittaa kadotetut",
+                        weights: { apostle: 0, prophet: 0, evangelist: 3, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "I work to bring healing, understanding, and restore unity",
+                        fi: "Työskentelen tuodakseni parantumista, ymmärrystä ja palauttaakseni ykseyden",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 3, teacher: 0 }
+                    },
+                    {
+                        en: "I carefully teach what scripture says to bring biblical clarity",
+                        fi: "Opetan huolellisesti, mitä raamattu sanoo tuodakseni raamatullista selkeyttä",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 0, teacher: 3 }
+                    }
+                ]
+            },
+            {
+                en: "What aspect of Jesus' ministry do you most identify with?",
+                fi: "Mihin Jeesuksen palvelutyön osaan samaistut eniten?",
+                answers: [
+                    {
+                        en: "His commissioning of disciples and establishing the church",
+                        fi: "Hänen opetuslastensa lähettäminen ja seurakunnan perustaminen",
+                        weights: { apostle: 3, prophet: 0, evangelist: 0, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "His confrontation of religious systems and prophetic declarations",
+                        fi: "Hänen uskonnollisten järjestelmien kohtaaminen ja profeetalliset julistukset",
+                        weights: { apostle: 0, prophet: 3, evangelist: 0, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "His proclamation of good news and calling people to follow Him",
+                        fi: "Hänen hyvän uutisen julistaminen ja ihmisten kutsuminen seuraamaan Häntä",
+                        weights: { apostle: 0, prophet: 0, evangelist: 3, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "His compassion for the crowds and individual care for people",
+                        fi: "Hänen myötätuntonsa väkijoukkoja kohtaan ja yksilöllinen huolenpito ihmisistä",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 3, teacher: 0 }
+                    },
+                    {
+                        en: "His teaching in parables and explaining kingdom truths",
+                        fi: "Hänen opetuksensa vertauksilla ja valtakunnan totuuksien selittäminen",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 0, teacher: 3 }
+                    }
+                ]
+            },
+            {
+                en: "Your church wants to impact the local school. What's your approach?",
+                fi: "Seurakuntasi haluaa vaikuttaa paikalliseen kouluun. Mikä on lähestymistapasi?",
+                answers: [
+                    {
+                        en: "Develop a comprehensive strategy to transform the school culture",
+                        fi: "Kehitän kattavan strategian muuttaakseni koulun kulttuuria",
+                        weights: { apostle: 3, prophet: 0, evangelist: 0, pastor: 0, teacher: 1 }
+                    },
+                    {
+                        en: "Intercede for the school and speak prophetically into its destiny",
+                        fi: "Rukoilen koulun puolesta ja puhun profeetallisesti sen kohtaloon",
+                        weights: { apostle: 0, prophet: 3, evangelist: 0, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "Organize assemblies and clubs to share Christ with students",
+                        fi: "Järjestän kokoontumisia ja kerhoja jakaakseni Kristusta opiskelijoille",
+                        weights: { apostle: 0, prophet: 0, evangelist: 3, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "Provide counseling and support for struggling students and families",
+                        fi: "Tarjoan neuvontaa ja tukea kamppaileville opiskelijoille ja perheille",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 3, teacher: 0 }
+                    },
+                    {
+                        en: "Offer tutoring and educational programs with biblical values",
+                        fi: "Tarjoan tukiopetusta ja koulutusohjelmia raamatullisilla arvoilla",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 0, teacher: 3 }
+                    }
+                ]
+            },
+            {
+                en: "How do you view spiritual warfare?",
+                fi: "Miten näet hengellisen sodankäynnin?",
+                answers: [
+                    {
+                        en: "As strategic kingdom advancement requiring authority and planning",
+                        fi: "Strategisena valtakunnan edistämisenä, joka vaatii auktoriteettia ja suunnittelua",
+                        weights: { apostle: 3, prophet: 1, evangelist: 0, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "As direct confrontation with darkness through prophetic declaration",
+                        fi: "Suorana yhteenottona pimeyden kanssa profeetallisen julistuksen kautta",
+                        weights: { apostle: 0, prophet: 3, evangelist: 0, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "As rescuing souls from darkness into God's marvelous light",
+                        fi: "Sielujen pelastamisena pimeydestä Jumalan ihmeelliseen valoon",
+                        weights: { apostle: 0, prophet: 0, evangelist: 3, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "As protecting and strengthening the flock against attacks",
+                        fi: "Lauman suojelemisena ja vahvistamisena hyökkäyksiä vastaan",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 3, teacher: 0 }
+                    },
+                    {
+                        en: "As equipping believers with biblical truth to stand firm",
+                        fi: "Uskovien varustamisena raamatullisella totuudella seisomaan lujasti",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 0, teacher: 3 }
+                    }
+                ]
+            },
+            {
+                en: "A mission opportunity arises in an unreached area. Your response?",
+                fi: "Lähetysmahdollisuus avautuu saavuttamattomalla alueella. Vastauksesi?",
+                answers: [
+                    {
+                        en: "I'm excited to pioneer and establish new works there",
+                        fi: "Olen innoissani pioneeroida ja perustaa uusia töitä sinne",
+                        weights: { apostle: 3, prophet: 0, evangelist: 1, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "I seek confirmation of God's timing and specific calling",
+                        fi: "Etsin vahvistusta Jumalan ajoituksesta ja erityisestä kutsusta",
+                        weights: { apostle: 0, prophet: 3, evangelist: 0, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "I'm eager to preach the gospel where Christ hasn't been named",
+                        fi: "Olen innokas saarnaamaan evankeliumia, missä Kristusta ei ole nimetty",
+                        weights: { apostle: 1, prophet: 0, evangelist: 3, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "I consider who will care for the new believers long-term",
+                        fi: "Harkitsen, kuka huolehtii uusista uskovista pitkällä aikavälillä",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 3, teacher: 0 }
+                    },
+                    {
+                        en: "I focus on developing training materials for new converts",
+                        fi: "Keskityn kehittämään koulutusmateriaaleja uusille käännynnäisille",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 0, teacher: 3 }
+                    }
+                ]
+            },
+            {
+                en: "What frustrates you most in church life?",
+                fi: "Mikä turhauttaa sinua eniten seurakuntaelämässä?",
+                answers: [
+                    {
+                        en: "Lack of vision and staying comfortable with the status quo",
+                        fi: "Vision puute ja mukavuusalueella pysyminen",
+                        weights: { apostle: 3, prophet: 1, evangelist: 0, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "Compromise with worldliness and ignoring God's voice",
+                        fi: "Kompromissi maailmallisuuden kanssa ja Jumalan äänen sivuuttaminen",
+                        weights: { apostle: 0, prophet: 3, evangelist: 0, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "Lack of urgency for reaching the lost",
+                        fi: "Kiireellisyyden puute kadotettujen tavoittamisessa",
+                        weights: { apostle: 0, prophet: 0, evangelist: 3, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "People not being cared for and falling through the cracks",
+                        fi: "Ihmisistä ei huolehdita ja he putoavat halkeamien läpi",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 3, teacher: 0 }
+                    },
+                    {
+                        en: "Biblical illiteracy and lack of depth in understanding",
+                        fi: "Raamatullinen lukutaidottomuus ja syvyyden puute ymmärryksessä",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 0, teacher: 3 }
+                    }
+                ]
+            },
+            {
+                en: "How do you approach church planting?",
+                fi: "Miten lähestyt seurakuntaistutusta?",
+                answers: [
+                    {
+                        en: "I love laying foundations and establishing new works from scratch",
+                        fi: "Rakastan perustusten laskemista ja uusien töiden perustamista alusta",
+                        weights: { apostle: 3, prophet: 0, evangelist: 1, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "I ensure it's God's timing and location through prayer and prophecy",
+                        fi: "Varmistan, että se on Jumalan ajoitus ja sijainti rukouksen ja profetian kautta",
+                        weights: { apostle: 1, prophet: 3, evangelist: 0, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "I focus on evangelizing the area and gathering new believers",
+                        fi: "Keskityn alueen evankelioimiseen ja uusien uskovien keräämiseen",
+                        weights: { apostle: 1, prophet: 0, evangelist: 3, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "I think about nurturing and establishing the new congregation",
+                        fi: "Ajattelen uuden seurakunnan hoivaamista ja vahvistamista",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 3, teacher: 1 }
+                    },
+                    {
+                        en: "I develop curriculum and teaching structures for discipleship",
+                        fi: "Kehitän opetussuunnitelmaa ja opetusrakenteita opetuslapseudelle",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 0, teacher: 3 }
+                    }
+                ]
+            },
+            {
+                en: "What role do signs and wonders play in your ministry?",
+                fi: "Mikä rooli merkeillä ja ihmeillä on palvelussasi?",
+                answers: [
+                    {
+                        en: "They confirm the apostolic message and open doors for the gospel",
+                        fi: "Ne vahvistavat apostolista sanomaa ja avaavat ovia evankeliumille",
+                        weights: { apostle: 3, prophet: 1, evangelist: 1, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "They demonstrate God's power and confirm prophetic words",
+                        fi: "Ne osoittavat Jumalan voiman ja vahvistavat profeetallisia sanoja",
+                        weights: { apostle: 1, prophet: 3, evangelist: 0, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "They draw people to hear the gospel and believe",
+                        fi: "Ne vetävät ihmisiä kuulemaan evankeliumia ja uskomaan",
+                        weights: { apostle: 0, prophet: 0, evangelist: 3, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "They meet people's needs and demonstrate God's love",
+                        fi: "Ne vastaavat ihmisten tarpeisiin ja osoittavat Jumalan rakkautta",
+                        weights: { apostle: 0, prophet: 1, evangelist: 0, pastor: 3, teacher: 0 }
+                    },
+                    {
+                        en: "They illustrate biblical truths and strengthen faith",
+                        fi: "Ne havainnollistavat raamatullisia totuuksia ja vahvistavat uskoa",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 0, teacher: 3 }
+                    }
+                ]
+            },
+            {
+                en: "A believer comes with questions about the end times. Your approach?",
+                fi: "Uskova tulee kysymysten kanssa lopun ajoista. Lähestymistapasi?",
+                answers: [
+                    {
+                        en: "I emphasize preparing the church to fulfill its end-time mandate",
+                        fi: "Korostan seurakunnan valmistamista täyttämään lopunajan tehtävänsä",
+                        weights: { apostle: 3, prophet: 1, evangelist: 0, pastor: 0, teacher: 1 }
+                    },
+                    {
+                        en: "I share what God is revealing about the times and seasons",
+                        fi: "Jaan, mitä Jumala paljastaa ajoista ja kausista",
+                        weights: { apostle: 0, prophet: 3, evangelist: 0, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "I stress the urgency of soul-winning before Christ returns",
+                        fi: "Korostan sielujen voittamisen kiireellisyyttä ennen Kristuksen paluuta",
+                        weights: { apostle: 0, prophet: 0, evangelist: 3, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "I comfort them and help process any fears or concerns",
+                        fi: "Lohdutan heitä ja autan käsittelemään pelkoja tai huolia",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 3, teacher: 0 }
+                    },
+                    {
+                        en: "I systematically teach biblical eschatology and prophecy",
+                        fi: "Opetan systemaattisesti raamatullista eskatologiaa ja profetiaa",
+                        weights: { apostle: 0, prophet: 1, evangelist: 0, pastor: 0, teacher: 3 }
+                    }
+                ]
+            },
+            {
+                en: "How do you view your role in God's kingdom?",
+                fi: "Miten näet roolisi Jumalan valtakunnassa?",
+                answers: [
+                    {
+                        en: "As a pioneer breaking new ground and establishing foundations",
+                        fi: "Pionerina murtamassa uutta maata ja laskemassa perustuksia",
+                        weights: { apostle: 3, prophet: 0, evangelist: 0, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "As a watchman declaring God's word and calling for alignment",
+                        fi: "Vartijana julistamassa Jumalan sanaa ja kutsumassa linjautumiseen",
+                        weights: { apostle: 0, prophet: 3, evangelist: 0, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "As a harvester bringing souls into the kingdom",
+                        fi: "Sadonkorjaajana tuomassa sieluja valtakuntaan",
+                        weights: { apostle: 0, prophet: 0, evangelist: 3, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "As a shepherd caring for and protecting God's people",
+                        fi: "Paimenena huolehtimassa ja suojelemassa Jumalan kansaa",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 3, teacher: 0 }
+                    },
+                    {
+                        en: "As an equipper building up believers in knowledge and truth",
+                        fi: "Varustajana rakentamassa uskovia tiedossa ja totuudessa",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 0, teacher: 3 }
+                    }
+                ]
+            },
+            {
+                en: "Your ideal ministry environment would be:",
+                fi: "Ihanteellinen palveluympäristösi olisi:",
+                answers: [
+                    {
+                        en: "Leading multiple churches or ministries with strategic oversight",
+                        fi: "Johtamassa useita seurakuntia tai palveluja strategisella valvonnalla",
+                        weights: { apostle: 3, prophet: 0, evangelist: 0, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "Having freedom to speak God's word without restriction",
+                        fi: "Vapaus puhua Jumalan sanaa ilman rajoituksia",
+                        weights: { apostle: 0, prophet: 3, evangelist: 0, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "Being on the frontlines reaching new people constantly",
+                        fi: "Etulinjassa tavoittamassa jatkuvasti uusia ihmisiä",
+                        weights: { apostle: 0, prophet: 0, evangelist: 3, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "Building deep relationships within a stable community",
+                        fi: "Syvien suhteiden rakentaminen vakaassa yhteisössä",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 3, teacher: 0 }
+                    },
+                    {
+                        en: "Having dedicated time to study and teach systematically",
+                        fi: "Omistettua aikaa tutkia ja opettaa systemaattisesti",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 0, teacher: 3 }
+                    }
+                ]
+            },
+            {
+                en: "When you see injustice in society, your first instinct is to:",
+                fi: "Kun näet epäoikeudenmukaisuutta yhteiskunnassa, ensimmäinen vaistosi on:",
+                answers: [
+                    {
+                        en: "Mobilize the church to be a transformational force",
+                        fi: "Mobilisoida seurakunta olemaan muutosvoima",
+                        weights: { apostle: 3, prophet: 1, evangelist: 0, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "Declare God's judgment and call for repentance",
+                        fi: "Julistaa Jumalan tuomio ja kutsua parannukseen",
+                        weights: { apostle: 0, prophet: 3, evangelist: 0, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "Share the gospel as the ultimate solution",
+                        fi: "Jakaa evankeliumi lopullisena ratkaisuna",
+                        weights: { apostle: 0, prophet: 0, evangelist: 3, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "Care for those affected and provide practical help",
+                        fi: "Huolehtia vaikutuksen alaisista ja tarjota käytännön apua",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 3, teacher: 0 }
+                    },
+                    {
+                        en: "Teach biblical principles of justice and righteousness",
+                        fi: "Opettaa raamatullisia oikeudenmukaisuuden ja vanhurskauden periaatteita",
+                        weights: { apostle: 0, prophet: 1, evangelist: 0, pastor: 0, teacher: 3 }
+                    }
+                ]
+            },
+            {
+                en: "How do you approach leadership development?",
+                fi: "Miten lähestyt johtajuuden kehittämistä?",
+                answers: [
+                    {
+                        en: "I identify and commission leaders for strategic positions",
+                        fi: "Tunnistan ja valtuutan johtajia strategisiin asemiin",
+                        weights: { apostle: 3, prophet: 0, evangelist: 0, pastor: 0, teacher: 1 }
+                    },
+                    {
+                        en: "I prophetically identify and activate people's callings",
+                        fi: "Tunnistan profeetallisesti ja aktivoin ihmisten kutsumuksia",
+                        weights: { apostle: 0, prophet: 3, evangelist: 0, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "I train people to be soul-winners and witnesses",
+                        fi: "Koulutan ihmisiä olemaan sielujen voittajia ja todistajia",
+                        weights: { apostle: 0, prophet: 0, evangelist: 3, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "I mentor leaders through personal relationship and care",
+                        fi: "Mentoroin johtajia henkilökohtaisen suhteen ja huolenpidon kautta",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 3, teacher: 0 }
+                    },
+                    {
+                        en: "I develop systematic training programs and curriculum",
+                        fi: "Kehitän systemaattisia koulutusohjelmia ja opetussuunnitelmia",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 0, teacher: 3 }
+                    }
+                ]
+            },
+            {
+                en: "What motivates you most in ministry?",
+                fi: "Mikä motivoi sinua eniten palvelutyössä?",
+                answers: [
+                    {
+                        en: "Seeing new works established and kingdom expansion",
+                        fi: "Uusien töiden perustaminen ja valtakunnan laajeneminen",
+                        weights: { apostle: 3, prophet: 0, evangelist: 1, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "Hearing and declaring what God is saying",
+                        fi: "Kuuleminen ja julistaminen, mitä Jumala sanoo",
+                        weights: { apostle: 0, prophet: 3, evangelist: 0, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "Seeing people come to salvation in Christ",
+                        fi: "Ihmisten tuleminen pelastukseen Kristuksessa",
+                        weights: { apostle: 0, prophet: 0, evangelist: 3, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "Seeing believers healed, restored, and growing",
+                        fi: "Uskovien parantuminen, palautuminen ja kasvu",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 3, teacher: 0 }
+                    },
+                    {
+                        en: "Seeing people understand and apply God's word",
+                        fi: "Ihmisten ymmärtäminen ja Jumalan sanan soveltaminen",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 0, teacher: 3 }
+                    }
+                ]
+            },
+            {
+                en: "A church conflict needs resolution. Your approach?",
+                fi: "Seurakunnan konflikti tarvitsee ratkaisun. Lähestymistapasi?",
+                answers: [
+                    {
+                        en: "I establish clear authority structures and decisive action",
+                        fi: "Luon selkeät auktoriteettirakenteet ja päättäväisen toiminnan",
+                        weights: { apostle: 3, prophet: 0, evangelist: 0, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "I discern the spiritual roots and speak prophetic correction",
+                        fi: "Erottelen hengelliset juuret ja puhun profeetallista korjausta",
+                        weights: { apostle: 0, prophet: 3, evangelist: 0, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "I redirect focus to our mission and evangelistic calling",
+                        fi: "Suuntaan huomion uudelleen tehtäväämme ja evankelioivaan kutsuun",
+                        weights: { apostle: 0, prophet: 0, evangelist: 3, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "I mediate with love, bringing healing and reconciliation",
+                        fi: "Sovittelen rakkaudella, tuoden parantumista ja sovintoa",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 3, teacher: 0 }
+                    },
+                    {
+                        en: "I teach biblical conflict resolution principles",
+                        fi: "Opetan raamatullisia konfliktinratkaisuperiaatteita",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 1, teacher: 3 }
+                    }
+                ]
+            },
+            {
+                en: "How do you view church traditions?",
+                fi: "Miten näet seurakunnan perinteet?",
+                answers: [
+                    {
+                        en: "I'm willing to break them for kingdom advancement",
+                        fi: "Olen valmis rikkomaan ne valtakunnan edistämiseksi",
+                        weights: { apostle: 3, prophet: 1, evangelist: 0, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "I challenge those not aligned with God's current word",
+                        fi: "Haastann ne, jotka eivät ole linjassa Jumalan nykyisen sanan kanssa",
+                        weights: { apostle: 0, prophet: 3, evangelist: 0, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "I use whatever helps reach people with the gospel",
+                        fi: "Käytän mitä tahansa, mikä auttaa tavoittamaan ihmisiä evankeliumilla",
+                        weights: { apostle: 0, prophet: 0, evangelist: 3, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "I value those that provide stability and comfort",
+                        fi: "Arvostan niitä, jotka tarjoavat vakautta ja mukavuutta",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 3, teacher: 0 }
+                    },
+                    {
+                        en: "I examine them biblically and keep what's sound",
+                        fi: "Tutkin niitä raamatullisesti ja pidän sen, mikä on tervettä",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 0, teacher: 3 }
+                    }
+                ]
+            },
+            {
+                en: "Your preferred preaching style is:",
+                fi: "Suosimasi saarnatyyli on:",
+                answers: [
+                    {
+                        en: "Visionary and mobilizing for action",
+                        fi: "Visionäärinen ja mobilisoiva toimintaan",
+                        weights: { apostle: 3, prophet: 0, evangelist: 0, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "Bold and confrontational with prophetic edge",
+                        fi: "Rohkea ja kohtaava profeetallisella terällä",
+                        weights: { apostle: 0, prophet: 3, evangelist: 0, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "Passionate and persuasive with altar calls",
+                        fi: "Intohimoinen ja vakuuttava alttarikutsuilla",
+                        weights: { apostle: 0, prophet: 0, evangelist: 3, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "Practical and encouraging with life application",
+                        fi: "Käytännöllinen ja rohkaiseva elämän sovelluksilla",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 3, teacher: 0 }
+                    },
+                    {
+                        en: "Expository and educational with deep insights",
+                        fi: "Selittävä ja opettavainen syvällisillä oivalluksilla",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 0, teacher: 3 }
+                    }
+                ]
+            },
+            {
+                en: "How do you approach prayer meetings?",
+                fi: "Miten lähestyt rukouskokouksia?",
+                answers: [
+                    {
+                        en: "Strategic intercession for kingdom breakthrough",
+                        fi: "Strateginen esirukous valtakunnan läpimurrolle",
+                        weights: { apostle: 3, prophet: 1, evangelist: 0, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "Waiting on God for prophetic revelation and direction",
+                        fi: "Jumalan odottaminen profeetallista ilmestystä ja suuntaa varten",
+                        weights: { apostle: 0, prophet: 3, evangelist: 0, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "Praying for salvations and evangelistic opportunities",
+                        fi: "Rukoileminen pelastusten ja evankelioivien tilaisuuksien puolesta",
+                        weights: { apostle: 0, prophet: 0, evangelist: 3, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "Lifting up individual needs and pastoral concerns",
+                        fi: "Yksilöllisten tarpeiden ja pastoraalisten huolien nostaminen",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 3, teacher: 0 }
+                    },
+                    {
+                        en: "Teaching on prayer and leading structured intercession",
+                        fi: "Opettaminen rukouksesta ja strukturoidun esirukouksen johtaminen",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 0, teacher: 3 }
+                    }
+                ]
+            },
+            {
+                en: "What's your view on church growth?",
+                fi: "Mikä on näkemyksesi seurakunnan kasvusta?",
+                answers: [
+                    {
+                        en: "It comes through strategic planning and kingdom expansion",
+                        fi: "Se tulee strategisen suunnittelun ja valtakunnan laajenemisen kautta",
+                        weights: { apostle: 3, prophet: 0, evangelist: 1, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "It comes through spiritual renewal and prophetic alignment",
+                        fi: "Se tulee hengellisen uudistuksen ja profeetallisen linjautumisen kautta",
+                        weights: { apostle: 0, prophet: 3, evangelist: 0, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "It comes through active evangelism and soul-winning",
+                        fi: "Se tulee aktiivisen evankelioinnin ja sielujen voittamisen kautta",
+                        weights: { apostle: 0, prophet: 0, evangelist: 3, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "It comes through caring well for existing members",
+                        fi: "Se tulee huolehtimalla hyvin nykyisistä jäsenistä",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 3, teacher: 0 }
+                    },
+                    {
+                        en: "It comes through solid teaching and discipleship",
+                        fi: "Se tulee vankan opetuksen ja opetuslapseuden kautta",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 0, teacher: 3 }
+                    }
+                ]
+            },
+            {
+                en: "Your response to denominational structures?",
+                fi: "Vastauksesi kirkkokuntarakenteisiin?",
+                answers: [
+                    {
+                        en: "I work with them but prioritize kingdom advancement",
+                        fi: "Työskentelen niiden kanssa mutta priorisoin valtakunnan edistämistä",
+                        weights: { apostle: 3, prophet: 0, evangelist: 0, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "I challenge them when they quench the Spirit",
+                        fi: "Haastan ne, kun ne sammuttavat Hengen",
+                        weights: { apostle: 1, prophet: 3, evangelist: 0, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "I use them if they help reach more people",
+                        fi: "Käytän niitä, jos ne auttavat tavoittamaan lisää ihmisiä",
+                        weights: { apostle: 0, prophet: 0, evangelist: 3, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "I appreciate their stability and support systems",
+                        fi: "Arvostan niiden vakautta ja tukijärjestelmiä",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 3, teacher: 1 }
+                    },
+                    {
+                        en: "I value their educational resources and doctrinal clarity",
+                        fi: "Arvostan niiden opetusresursseja ja opillista selkeyttä",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 0, teacher: 3 }
+                    }
+                ]
+            },
+            {
+                en: "How do you handle criticism of your ministry?",
+                fi: "Miten käsittelet palvelusi kritiikkiä?",
+                answers: [
+                    {
+                        en: "I stay focused on the vision despite opposition",
+                        fi: "Pysyn keskittyneenä visioon vastustuksesta huolimatta",
+                        weights: { apostle: 3, prophet: 1, evangelist: 0, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "I discern if it's spiritual resistance to prophetic truth",
+                        fi: "Erottelen, onko se hengellistä vastustusta profeetalliselle totuudelle",
+                        weights: { apostle: 0, prophet: 3, evangelist: 0, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "I don't let it stop me from preaching the gospel",
+                        fi: "En anna sen estää minua saarnaamasta evankeliumia",
+                        weights: { apostle: 0, prophet: 0, evangelist: 3, pastor: 0, teacher: 0 }
+                    },
+                    {
+                        en: "I listen carefully and consider if there's truth to grow from",
+                        fi: "Kuuntelen huolellisesti ja harkitsen, onko siinä totuutta kasvaa",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 3, teacher: 1 }
+                    },
+                    {
+                        en: "I examine it biblically and adjust if scripturally warranted",
+                        fi: "Tutkin sitä raamatullisesti ja mukaudun, jos raamatullisesti perusteltua",
+                        weights: { apostle: 0, prophet: 0, evangelist: 0, pastor: 0, teacher: 3 }
+                    }
+                ]
+            }
+        ];
+
+        // Gift Descriptions (same as before, keeping for reference)
+        const giftDescriptions = {
+            apostle: {
+                en: {
+                    title: "Apostle - The Pioneer and Foundation Layer",
+                    description: "You have the gift of apostleship! Apostles are sent ones who pioneer new works, establish churches, and lay foundations for kingdom expansion. You carry a governmental anointing to build, establish, and bring order to the body of Christ.",
+                    characteristics: [
+                        "Visionary leadership and strategic thinking",
+                        "Church planting and pioneering new ministries",
+                        "Establishing doctrine and church order",
+                        "Raising up and commissioning other leaders",
+                        "Signs, wonders, and miracles confirming the message",
+                        "Trans-local ministry and kingdom networking"
+                    ],
+                    biblical: "Ephesians 4:11, 1 Corinthians 12:28, 1 Corinthians 3:10",
+                    examples: "Paul, Peter, Barnabas, Andronicus and Junia"
+                },
+                fi: {
+                    title: "Apostoli - Pioneeri ja Perustuksen Laskija",
+                    description: "Sinulla on apostolin lahja! Apostolit ovat lähetettyjä, jotka pioneeroivat uusia töitä, perustavat seurakuntia ja laskevat perustuksia valtakunnan laajentumiselle.",
+                    characteristics: [
+                        "Visionäärinen johtajuus ja strateginen ajattelu",
+                        "Seurakuntaistutus ja uusien palvelujen pioneerointi",
+                        "Opin ja seurakunnan järjestyksen perustaminen",
+                        "Muiden johtajien nostaminen ja valtuuttaminen",
+                        "Merkit, ihmeet ja viestin vahvistavat ihmeet",
+                        "Paikallisrajat ylittävä palvelu ja valtakunnan verkostoituminen"
+                    ],
+                    biblical: "Efesolaiskirje 4:11, 1. Korinttolaiskirje 12:28, 1. Korinttolaiskirje 3:10",
+                    examples: "Paavali, Pietari, Barnabas, Andronikus ja Junia"
+                }
+            },
+            prophet: {
+                en: {
+                    title: "Prophet - The Voice and Seer",
+                    description: "You have the gift of prophecy! Prophets hear God's voice clearly and communicate His heart to His people. You carry an anointing to see in the spirit, discern times and seasons, and call God's people to alignment with His purposes.",
+                    characteristics: [
+                        "Strong prayer and intercession life",
+                        "Receiving visions, dreams, and revelations",
+                        "Bold proclamation of God's word",
+                        "Calling for repentance and holiness",
+                        "Spiritual discernment and insight",
+                        "Operating in prophetic gifts and words of knowledge"
+                    ],
+                    biblical: "Ephesians 4:11, 1 Corinthians 12:28, Acts 11:27-28",
+                    examples: "Agabus, Silas, Judas and Barsabbas, Philip's daughters"
+                },
+                fi: {
+                    title: "Profeetta - Ääni ja Näkijä",
+                    description: "Sinulla on profetian lahja! Profeetat kuulevat Jumalan äänen selkeästi ja viestivät Hänen sydämensä Hänen kansalleen.",
+                    characteristics: [
+                        "Vahva rukous- ja esirukoelämä",
+                        "Näkyjen, unien ja ilmestysten vastaanottaminen",
+                        "Jumalan sanan rohkea julistaminen",
+                        "Kutsu parannukseen ja pyhyyteen",
+                        "Hengellinen erottelukyky ja ymmärrys",
+                        "Toimiminen profeetallisissa lahjoissa ja tiedon sanoissa"
+                    ],
+                    biblical: "Efesolaiskirje 4:11, 1. Korinttolaiskirje 12:28, Apostolien teot 11:27-28",
+                    examples: "Agabus, Silas, Juudas ja Barsabbas, Filippuksen tyttäret"
+                }
+            },
+            evangelist: {
+                en: {
+                    title: "Evangelist - The Harvester and Soul Winner",
+                    description: "You have the gift of evangelism! Evangelists are passionate about reaching the lost with the gospel. You carry an anointing to effectively communicate the good news, lead people to salvation, and equip others to share their faith.",
+                    characteristics: [
+                        "Passion for the lost and urgency for salvation",
+                        "Effective gospel presentation",
+                        "Leading people to Christ regularly",
+                        "Miraculous signs following gospel preaching",
+                        "Training others in evangelism",
+                        "Building bridges to unreached communities"
+                    ],
+                    biblical: "Ephesians 4:11, Acts 21:8, 2 Timothy 4:5",
+                    examples: "Philip the Evangelist, Timothy"
+                },
+                fi: {
+                    title: "Evankelista - Sadonkorjaaja ja Sielujen Voittaja",
+                    description: "Sinulla on evankelioinnin lahja! Evankelistat ovat intohimoisia tavoittamaan kadotetut evankeliumilla.",
+                    characteristics: [
+                        "Intohimo kadotettuja kohtaan ja pelastuksen kiireellisyys",
+                        "Tehokas evankeliumin esittäminen",
+                        "Ihmisten johtaminen säännöllisesti Kristuksen luo",
+                        "Ihmeitä evankeliumin saarnan jälkeen",
+                        "Muiden kouluttaminen evankeliointiin",
+                        "Siltojen rakentaminen saavuttamattomiin yhteisöihin"
+                    ],
+                    biblical: "Efesolaiskirje 4:11, Apostolien teot 21:8, 2. Timoteuskirje 4:5",
+                    examples: "Filippus Evankelista, Timoteus"
+                }
+            },
+            pastor: {
+                en: {
+                    title: "Pastor - The Shepherd and Caregiver",
+                    description: "You have the gift of pastoring! Pastors are shepherds who care for God's flock with compassion. You carry an anointing to nurture, protect, guide, and heal God's people, helping them grow to spiritual maturity.",
+                    characteristics: [
+                        "Heart for people and their wellbeing",
+                        "Building long-term relationships",
+                        "Providing counsel and guidance",
+                        "Creating safe and nurturing environments",
+                        "Healing and restoration ministry",
+                        "Developing community and fellowship"
+                    ],
+                    biblical: "Ephesians 4:11, 1 Peter 5:1-4, Acts 20:28",
+                    examples: "James the brother of Jesus, Peter in his later ministry"
+                },
+                fi: {
+                    title: "Paimen - Paimen ja Hoitaja",
+                    description: "Sinulla on paimenen lahja! Paimenet ovat paimenia, jotka huolehtivat Jumalan laumasta myötätunnolla.",
+                    characteristics: [
+                        "Sydän ihmisiä ja heidän hyvinvointiaan kohtaan",
+                        "Pitkäaikaisten suhteiden rakentaminen",
+                        "Neuvonnan ja ohjauksen tarjoaminen",
+                        "Turvallisten ja hoivaavien ympäristöjen luominen",
+                        "Parantumis- ja palautuspalvelu",
+                        "Yhteisön ja yhteyden kehittäminen"
+                    ],
+                    biblical: "Efesolaiskirje 4:11, 1. Pietarin kirje 5:1-4, Apostolien teot 20:28",
+                    examples: "Jaakob Jeesuksen veli, Pietari myöhemmässä palvelussaan"
+                }
+            },
+            teacher: {
+                en: {
+                    title: "Teacher - The Instructor and Equipper",
+                    description: "You have the gift of teaching! Teachers are called to accurately explain and apply God's word. You carry an anointing to bring understanding, establish believers in truth, and equip the saints for ministry through systematic instruction.",
+                    characteristics: [
+                        "Love for God's word and study",
+                        "Ability to explain complex truths simply",
+                        "Systematic and organized thinking",
+                        "Developing curriculum and training materials",
+                        "Grounding believers in sound doctrine",
+                        "Correcting error with biblical truth"
+                    ],
+                    biblical: "Ephesians 4:11, 1 Corinthians 12:28, James 3:1",
+                    examples: "Apollos, Priscilla and Aquila, Luke"
+                },
+                fi: {
+                    title: "Opettaja - Ohjaaja ja Varustaja",
+                    description: "Sinulla on opettamisen lahja! Opettajat on kutsuttu selittämään ja soveltamaan tarkasti Jumalan sanaa.",
+                    characteristics: [
+                        "Rakkaus Jumalan sanaa ja tutkimusta kohtaan",
+                        "Kyky selittää monimutkaisia totuuksia yksinkertaisesti",
+                        "Systemaattinen ja järjestelmällinen ajattelu",
+                        "Opetussuunnitelman ja koulutusmateriaalien kehittäminen",
+                        "Uskovien perustaminen terveeseen oppiin",
+                        "Virheen korjaaminen raamatullisella totuudella"
+                    ],
+                    biblical: "Efesolaiskirje 4:11, 1. Korinttolaiskirje 12:28, Jaakobin kirje 3:1",
+                    examples: "Apollos, Priskilla ja Akvila, Luukas"
+                }
+            }
+        };
+
+        // Navigation Functions
+        function showSection(section, buttonElement) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(s => s.classList.add('hidden'));
+            
+            // Show selected section
+            const targetSection = document.getElementById(section + 'Section');
+            if (targetSection) {
+                targetSection.classList.remove('hidden');
+            }
+            
+            // Update nav buttons
+            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+            
+            // Add active class to clicked button
+            if (buttonElement) {
+                buttonElement.classList.add('active');
+            } else {
+                // Find button by section name if no element provided
+                document.querySelectorAll('.nav-btn').forEach(btn => {
+                    if (btn.onclick && btn.onclick.toString().includes(section)) {
+                        btn.classList.add('active');
+                    }
+                });
+            }
+            
+            currentSection = section;
+        }
+
+        // Initialize language
+        function setLanguage(lang) {
+            currentLanguage = lang;
+            updateLanguageButtons();
+            updateAllText();
+        }
+
+        function updateLanguageButtons() {
+            const buttons = document.querySelectorAll('.language-btn');
+            buttons.forEach(btn => {
+                if (btn.textContent === 'English' && currentLanguage === 'en') {
+                    btn.classList.add('active');
+                } else if (btn.textContent === 'Suomi' && currentLanguage === 'fi') {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }
+
+        function updateAllText() {
+            const elements = document.querySelectorAll('[data-en]');
+            elements.forEach(el => {
+                const text = el.getAttribute(`data-${currentLanguage}`);
+                if (text) {
+                    el.textContent = text;
+                }
+            });
+        }
+
+        // Assessment Functions
+        function startAssessment() {
+            currentQuestion = 0;
+            answers = [];
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const question = questions[currentQuestion];
+            const container = document.getElementById('questionContainer');
+            
+            const lang = currentLanguage;
+            let html = `
+                <div class="question">${currentQuestion + 1}. ${question[lang]}</div>
+                <div class="answer-options">
+            `;
+            
+            question.answers.forEach((answer, index) => {
+                const selected = answers[currentQuestion] === index ? 'selected' : '';
+                html += `
+                    <div class="answer-option ${selected}" onclick="selectAnswer(${index})">
+                        ${answer[lang]}
+                    </div>
+                `;
+            });
+            
+            html += '</div>';
+            container.innerHTML = html;
+            
+            updateProgress();
+            updateNavButtons();
+        }
+
+        function selectAnswer(index) {
+            answers[currentQuestion] = index;
+            const options = document.querySelectorAll('.answer-option');
+            options.forEach((opt, i) => {
+                if (i === index) {
+                    opt.classList.add('selected');
+                } else {
+                    opt.classList.remove('selected');
+                }
+            });
+            updateNavButtons();
+        }
+
+        function updateProgress() {
+            const progress = ((currentQuestion + 1) / questions.length) * 100;
+            const progressBar = document.getElementById('progressBar');
+            progressBar.style.width = progress + '%';
+            progressBar.textContent = Math.round(progress) + '%';
+        }
+
+        function updateNavButtons() {
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            
+            prevBtn.style.visibility = currentQuestion > 0 ? 'visible' : 'hidden';
+            
+            if (currentQuestion === questions.length - 1) {
+                nextBtn.textContent = translations[currentLanguage].submitAssessment;
+                nextBtn.disabled = answers[currentQuestion] === undefined;
+            } else {
+                nextBtn.textContent = currentLanguage === 'en' ? 'Next' : 'Seuraava';
+                nextBtn.disabled = answers[currentQuestion] === undefined;
+            }
+        }
+
+        function previousQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                showQuestion();
+            }
+        }
+
+        function nextQuestion() {
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                showQuestion();
+            } else if (answers[currentQuestion] !== undefined) {
+                calculateResults();
+            }
+        }
+
+        function calculateResults() {
+            // Reset scores
+            scores = {
+                apostle: 0,
+                prophet: 0,
+                evangelist: 0,
+                pastor: 0,
+                teacher: 0
+            };
+            
+            // Calculate scores
+            answers.forEach((answerIndex, questionIndex) => {
+                const question = questions[questionIndex];
+                const weights = question.answers[answerIndex].weights;
+                
+                Object.keys(weights).forEach(gift => {
+                    scores[gift] += weights[gift];
+                });
+            });
+            
+            // Calculate percentages
+            const maxPossibleScore = questions.length * 3;
+            Object.keys(scores).forEach(gift => {
+                scores[gift] = Math.round((scores[gift] / maxPossibleScore) * 100);
+            });
+            
+            showResults();
+        }
+
+        function showResults() {
+            document.getElementById('assessmentSection').classList.add('hidden');
+            document.getElementById('resultsSection').classList.remove('hidden');
+            
+            const sortedGifts = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+            const primaryGift = sortedGifts[0][0];
+            const secondaryGift = sortedGifts[1][0];
+            
+            const lang = currentLanguage;
+            const trans = translations[lang];
+            
+            let resultsHTML = `
+                <div class="gift-scores">
+                    <h2>${trans.giftAnalysis}</h2>
+            `;
+            
+            sortedGifts.forEach(([gift, score]) => {
+                resultsHTML += `
+                    <div class="gift-score">
+                        <div class="gift-label">
+                            <span>${trans[gift]}</span>
+                            <span>${score}%</span>
+                        </div>
+                        <div class="gift-bar-container">
+                            <div class="gift-bar gift-${gift}" style="width: ${score}%"></div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            resultsHTML += `</div>`;
+            
+            // Primary Gift Description
+            const primaryDesc = giftDescriptions[primaryGift][lang];
+            resultsHTML += `
+                <div class="gift-description">
+                    <h2>${trans.primaryGift}: ${primaryDesc.title}</h2>
+                    <p>${primaryDesc.description}</p>
+                    
+                    <h3>${currentLanguage === 'en' ? 'Key Characteristics:' : 'Keskeiset Ominaisuudet:'}</h3>
+                    <ul>
+            `;
+            
+            primaryDesc.characteristics.forEach(char => {
+                resultsHTML += `<li>${char}</li>`;
+            });
+            
+            resultsHTML += `
+                    </ul>
+                    
+                    <div class="scripture-reference">
+                        <strong>${trans.biblicalFoundation}:</strong> ${primaryDesc.biblical}<br>
+                        <strong>${currentLanguage === 'en' ? 'Biblical Examples:' : 'Raamatulliset Esimerkit:'}</strong> ${primaryDesc.examples}
+                    </div>
+                </div>
+            `;
+            
+            // Secondary Gift
+            if (scores[secondaryGift] > 30) {
+                const secondaryDesc = giftDescriptions[secondaryGift][lang];
+                resultsHTML += `
+                    <div class="gift-description">
+                        <h3>${trans.secondaryGift}: ${trans[secondaryGift]}</h3>
+                        <p>${currentLanguage === 'en' ? 
+                            'You also show strong tendencies in ' + trans[secondaryGift].toLowerCase() + ' ministry.' :
+                            'Osoitat myös vahvoja taipumuksia ' + trans[secondaryGift].toLowerCase() + ' palvelussa.'}</p>
+                    </div>
+                `;
+            }
+            
+            // Ministry Recommendations
+            resultsHTML += `
+                <div class="ministry-recommendations">
+                    <h2>${trans.ministryRecommendations}</h2>
+                    ${getMinistryRecommendations(primaryGift, secondaryGift)}
+                </div>
+            `;
+            
+            // Team Dynamics
+            resultsHTML += `
+                <div class="team-comparison">
+                    <h2>${trans.teamDynamics}</h2>
+                    <p>${currentLanguage === 'en' ? 
+                        'Understanding how your gift works with others is crucial for effective ministry. Consider forming teams with complementary gifts for maximum kingdom impact.' :
+                        'Ymmärrys siitä, miten lahjasi toimii muiden kanssa, on ratkaisevan tärkeää tehokkaalle palvelulle.'}</p>
+                    <button class="btn" onclick="showSection('team')">${currentLanguage === 'en' ? 'Team Analysis' : 'Tiimin Analyysi'}</button>
+                </div>
+            `;
+            
+            document.getElementById('resultsContent').innerHTML = resultsHTML;
+            
+            // Store results for team comparison
+            localStorage.setItem('fiveFoldResults', JSON.stringify({
+                scores: scores,
+                primary: primaryGift,
+                secondary: secondaryGift,
+                date: new Date().toISOString()
+            }));
+        }
+
+        function getMinistryRecommendations(primary, secondary) {
+            const recommendations = {
+                apostle: {
+                    en: [
+                        "Church planting and pioneering new ministries",
+                        "Leadership development and training programs",
+                        "Strategic planning and vision casting",
+                        "Missions and cross-cultural ministry",
+                        "Network building and ministry partnerships"
+                    ],
+                    fi: [
+                        "Seurakuntaistutus ja uusien palvelujen pioneerointi",
+                        "Johtajuuden kehittäminen ja koulutusohjelmat",
+                        "Strateginen suunnittelu ja vision luominen",
+                        "Lähetystyö ja kulttuurienvälinen palvelu",
+                        "Verkostojen rakentaminen ja palvelukumppanuudet"
+                    ]
+                },
+                prophet: {
+                    en: [
+                        "Intercessory prayer ministry",
+                        "Prophetic teams and training",
+                        "Worship and creative arts ministry",
+                        "Spiritual warfare and deliverance",
+                        "Revival and renewal initiatives"
+                    ],
+                    fi: [
+                        "Esirukouksen palvelutyö",
+                        "Profeetalliset tiimit ja koulutus",
+                        "Ylistys ja luovan taiteen palvelu",
+                        "Hengellinen sodankäynti ja vapautus",
+                        "Herätys- ja uudistusaloitteet"
+                    ]
+                },
+                evangelist: {
+                    en: [
+                        "Outreach and evangelism teams",
+                        "Street ministry and public preaching",
+                        "Crusades and evangelistic campaigns",
+                        "Personal evangelism training",
+                        "Social media and digital evangelism"
+                    ],
+                    fi: [
+                        "Tavoittavat tiimit ja evankeliointi",
+                        "Katutyö ja julkinen saarnaaminen",
+                        "Evankelioimiskampanjat",
+                        "Henkilökohtaisen evankelioinnin koulutus",
+                        "Sosiaalinen media ja digitaalinen evankeliointi"
+                    ]
+                },
+                pastor: {
+                    en: [
+                        "Small group leadership",
+                        "Counseling and pastoral care",
+                        "Hospital and visitation ministry",
+                        "Family and marriage ministry",
+                        "Discipleship and mentoring programs"
+                    ],
+                    fi: [
+                        "Pienryhmäjohtajuus",
+                        "Neuvonta ja pastoraalinen hoito",
+                        "Sairaala- ja vierailupalvelu",
+                        "Perhe- ja avioliittopalvelu",
+                        "Opetuslapseuden ja mentoroinnin ohjelmat"
+                    ]
+                },
+                teacher: {
+                    en: [
+                        "Bible study and teaching ministry",
+                        "Sunday school and children's ministry",
+                        "Curriculum development",
+                        "Seminary and Bible school instruction",
+                        "Writing and resource development"
+                    ],
+                    fi: [
+                        "Raamattuopetus ja opetuspalvelu",
+                        "Pyhäkoulu ja lastentyö",
+                        "Opetussuunnitelman kehittäminen",
+                        "Seminaari- ja raamattukouluopetus",
+                        "Kirjoittaminen ja resurssien kehittäminen"
+                    ]
+                }
+            };
+            
+            const lang = currentLanguage;
+            const recs = recommendations[primary][lang];
+            
+            let html = '<ul>';
+            recs.forEach(rec => {
+                html += `<li class="recommendation-item">${rec}</li>`;
+            });
+            html += '</ul>';
+            
+            return html;
+        }
+
+        function addTeamMember() {
+            const list = document.getElementById('teamMembersList');
+            const memberCount = list.children.length;
+            
+            const html = `
+                <div class="team-member-input">
+                    <input type="text" placeholder="${currentLanguage === 'en' ? 'Team Member Name' : 'Tiimin Jäsenen Nimi'}" id="member-name-${memberCount}">
+                    <select id="member-gift-${memberCount}">
+                        <option value="">${currentLanguage === 'en' ? 'Select Primary Gift' : 'Valitse Ensisijainen Lahja'}</option>
+                        <option value="apostle">${translations[currentLanguage].apostle}</option>
+                        <option value="prophet">${translations[currentLanguage].prophet}</option>
+                        <option value="evangelist">${translations[currentLanguage].evangelist}</option>
+                        <option value="pastor">${translations[currentLanguage].pastor}</option>
+                        <option value="teacher">${translations[currentLanguage].teacher}</option>
+                    </select>
+                </div>
+            `;
+            
+            list.insertAdjacentHTML('beforeend', html);
+        }
+
+        function analyzeTeam() {
+            const membersList = document.getElementById('teamMembersList');
+            const members = [];
+            
+            for (let i = 0; i < membersList.children.length; i++) {
+                const name = document.getElementById(`member-name-${i}`).value;
+                const gift = document.getElementById(`member-gift-${i}`).value;
+                
+                if (name && gift) {
+                    members.push({ name, gift });
+                }
+            }
+            
+            if (members.length === 0) {
+                alert(currentLanguage === 'en' ? 'Please add at least one team member' : 'Lisää vähintään yksi tiimin jäsen');
+                return;
+            }
+            
+            // Add current user
+            const myResults = JSON.parse(localStorage.getItem('fiveFoldResults') || '{}');
+            if (myResults.primary) {
+                members.unshift({
+                    name: currentLanguage === 'en' ? 'You' : 'Sinä',
+                    gift: myResults.primary
+                });
+            }
+            
+            // Analyze team composition
+            const giftCounts = {
+                apostle: 0,
+                prophet: 0,
+                evangelist: 0,
+                pastor: 0,
+                teacher: 0
+            };
+            
+            members.forEach(member => {
+                giftCounts[member.gift]++;
+            });
+            
+            let analysisHTML = `<h3>${currentLanguage === 'en' ? 'Team Composition Analysis' : 'Tiimin Koostumuksen Analyysi'}</h3>`;
+            
+            // Show team members
+            analysisHTML += `<div class="team-member-result">`;
+            members.forEach(member => {
+                analysisHTML += `<p><strong>${member.name}:</strong> ${translations[currentLanguage][member.gift]}</p>`;
+            });
+            analysisHTML += `</div>`;
+            
+            // Identify strengths and gaps
+            const missingGifts = Object.keys(giftCounts).filter(gift => giftCounts[gift] === 0);
+            const dominantGifts = Object.keys(giftCounts).filter(gift => giftCounts[gift] > 1);
+            
+            analysisHTML += `<div class="team-member-result">`;
+            
+            if (missingGifts.length > 0) {
+                analysisHTML += `<h4>${currentLanguage === 'en' ? 'Missing Gifts:' : 'Puuttuvat Lahjat:'}</h4><p>`;
+                missingGifts.forEach(gift => {
+                    analysisHTML += `${translations[currentLanguage][gift]}, `;
+                });
+                analysisHTML = analysisHTML.slice(0, -2) + '</p>';
+            }
+            
+            if (dominantGifts.length > 0) {
+                analysisHTML += `<h4>${currentLanguage === 'en' ? 'Strong Representation:' : 'Vahva Edustus:'}</h4><p>`;
+                dominantGifts.forEach(gift => {
+                    analysisHTML += `${translations[currentLanguage][gift]} (${giftCounts[gift]}), `;
+                });
+                analysisHTML = analysisHTML.slice(0, -2) + '</p>';
+            }
+            
+            analysisHTML += `</div>`;
+            
+            // Recommendations
+            analysisHTML += `<div class="team-member-result">`;
+            analysisHTML += `<h4>${currentLanguage === 'en' ? 'Team Recommendations:' : 'Tiimin Suositukset:'}</h4>`;
+            
+            if (missingGifts.length > 0) {
+                analysisHTML += `<p>${currentLanguage === 'en' ? 
+                    'Consider recruiting team members with the missing gifts for a more balanced ministry team.' :
+                    'Harkitse tiimin jäsenten rekrytointia puuttuvilla lahjoilla tasapainoisemman palvelutiimin saavuttamiseksi.'}</p>`;
+            }
+            
+            if (Object.values(giftCounts).every(count => count > 0)) {
+                analysisHTML += `<p>${currentLanguage === 'en' ? 
+                    'Excellent! Your team has representation from all five ministry gifts. This provides great balance and effectiveness.' :
+                    'Erinomaista! Tiimissäsi on edustus kaikista viidestä palvelulahjasta. Tämä tarjoaa loistavaa tasapainoa ja tehokkuutta.'}</p>`;
+            }
+            
+            analysisHTML += `</div>`;
+            
+            document.getElementById('teamResultsArea').innerHTML = analysisHTML;
+            document.getElementById('teamResultsArea').classList.remove('hidden');
+        }
+
+        function printResults() {
+            window.print();
+        }
+
+        function saveResults() {
+            const results = document.getElementById('resultsContent').innerHTML;
+            const journalEntries = document.querySelectorAll('.journal-entry');
+            let journalContent = '';
+            
+            journalEntries.forEach((entry, index) => {
+                if (entry.value) {
+                    journalContent += `<h3>Journal Entry ${index + 1}</h3><p>${entry.value}</p>`;
+                }
+            });
+            
+            const blob = new Blob([`
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <meta charset="UTF-8">
+                    <title>Five-Fold Ministry Results - Cleon Alleyne</title>
+                    <style>
+                        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+                        .gift-bar-container { background: #e2e8f0; height: 30px; border-radius: 10px; margin: 10px 0; }
+                        .gift-bar { height: 100%; border-radius: 10px; background: #805ad5; }
+                        .scripture-reference { background: #f8f4ff; padding: 15px; border-left: 4px solid #805ad5; margin: 15px 0; }
+                        .attribution { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #e2e8f0; }
+                    </style>
+                </head>
+                <body>
+                    <h1>Your Five-Fold Ministry Assessment Results</h1>
+                    ${results}
+                    ${journalContent ? '<h2>Journal Entries</h2>' + journalContent : ''}
+                    <div class="attribution">
+                        <p>Assessment taken on ${new Date().toLocaleDateString()}</p>
+                        <p><strong>Created by Cleon Alleyne for Ministry Purposes</strong></p>
+                    </div>
+                </body>
+                </html>
+            `], { type: 'text/html' });
+            
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'five-fold-ministry-results.html';
+            a.click();
+        }
+
+        function retakeAssessment() {
+            currentQuestion = 0;
+            answers = [];
+            scores = {
+                apostle: 0,
+                prophet: 0,
+                evangelist: 0,
+                pastor: 0,
+                teacher: 0
+            };
+            
+            document.getElementById('resultsSection').classList.add('hidden');
+            document.getElementById('teamSection').classList.add('hidden');
+            document.getElementById('homeSection').classList.remove('hidden');
+            
+            // Reset nav
+            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelector('.nav-btn').classList.add('active');
+        }
+
+        function saveJournal() {
+            const entries = [];
+            const date = document.getElementById('journalDate').value || new Date().toISOString().split('T')[0];
+            
+            document.querySelectorAll('.journal-entry').forEach((entry, index) => {
+                if (entry.value) {
+                    entries.push({
+                        date: date,
+                        content: entry.value,
+                        index: index
+                    });
+                }
+            });
+            
+            // Save to localStorage
+            const existingJournal = JSON.parse(localStorage.getItem('fiveFoldJournal') || '[]');
+            existingJournal.push(...entries);
+            localStorage.setItem('fiveFoldJournal', JSON.stringify(existingJournal));
+            
+            alert(currentLanguage === 'en' ? 
+                'Journal entries saved successfully!' : 
+                'Päiväkirjamerkinnät tallennettu onnistuneesti!');
+        }
+
+        function printJournal() {
+            window.print();
+        }
+
+        // Set today's date for commitment and journal
+        window.onload = function() {
+            const today = new Date().toISOString().split('T')[0];
+            const commitmentDate = document.getElementById('commitmentDate');
+            const journalDate = document.getElementById('journalDate');
+            
+            if (commitmentDate) commitmentDate.value = today;
+            if (journalDate) journalDate.value = today;
+            
+            updateAllText();
+        };
+    </script>
+</body>
+</html>
